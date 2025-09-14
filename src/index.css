@@ -9,34 +9,55 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 340 15% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 340 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 340 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 340 85% 85%;
+    --primary-foreground: 340 15% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 340 30% 96%;
+    --secondary-foreground: 340 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 340 20% 96%;
+    --muted-foreground: 340 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 340 100% 95%;
+    --accent-foreground: 340 15% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 20% 92%;
+    --input: 340 20% 96%;
+    --ring: 340 85% 85%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --powder-pink: 340 85% 85%;
+    --powder-pink-light: 340 100% 95%;
+    --powder-pink-dark: 340 60% 70%;
+    --rose-gold: 25 75% 75%;
+    --cream: 40 20% 98%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--powder-pink-light)), hsl(var(--powder-pink)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--powder-pink-light)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--cream)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--powder-pink) / 0.15);
+    --shadow-medium: 0 8px 30px hsl(var(--powder-pink) / 0.2);
+    --shadow-hover: 0 12px 40px hsl(var(--powder-pink) / 0.25);
+    
+    /* Transitions */
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
