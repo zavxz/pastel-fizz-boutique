@@ -42,13 +42,20 @@ All colors MUST be HSL.
     --powder-pink: 340 85% 85%;
     --powder-pink-light: 340 100% 95%;
     --powder-pink-dark: 340 60% 70%;
+    --powder-blue: 210 85% 85%;
+    --powder-blue-light: 210 100% 95%;
+    --powder-blue-dark: 210 60% 70%;
     --rose-gold: 25 75% 75%;
     --cream: 40 20% 98%;
+    --mint-green: 160 60% 85%;
+    --lavender: 270 70% 90%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--powder-pink-light)), hsl(var(--powder-pink)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--powder-pink-light)));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--powder-pink-light)), hsl(var(--powder-blue-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--powder-pink-light)), hsl(var(--powder-blue-light)));
     --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--cream)));
+    --gradient-youthful: linear-gradient(120deg, hsl(var(--powder-pink)), hsl(var(--powder-blue)), hsl(var(--mint-green)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--powder-blue-light)), hsl(var(--lavender)));
     
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(var(--powder-pink) / 0.15);

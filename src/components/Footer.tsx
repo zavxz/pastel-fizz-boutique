@@ -16,7 +16,7 @@ const Footer = () => {
                 <Heart className="w-4 h-4 text-primary-foreground" />
               </div>
               <span className="text-lg font-semibold text-foreground">
-                Clay Beauty
+                Liluu
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -77,7 +77,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>kontakt@claybeauty.pl</span>
+                <span>kontakt@liluu.pl</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary" />
@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Clay Beauty. Wszystkie prawa zastrzeżone.
+            © {currentYear} Liluu. Wszystkie prawa zastrzeżone.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/regulamin" className="text-sm text-muted-foreground hover:text-primary transition-colors">

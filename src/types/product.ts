@@ -22,3 +22,12 @@ export interface CartContextType {
   totalItems: number;
   totalPrice: number;
 }
+
+export interface WishlistContextType {
+  items: Product[];
+  addToWishlist: (product: Product) => void;
+  removeFromWishlist: (productId: string) => void;
+  clearWishlist: () => void;
+  isInWishlist: (productId: string) => boolean;
+  totalItems: number;
+}

@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useCart } from '@/contexts/CartContext';
+import { useWishlist } from '@/contexts/WishlistContext';
 import { useToast } from '@/hooks/use-toast';
 import { sampleProducts } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
@@ -14,6 +15,7 @@ const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { toast } = useToast();
 
   const product = sampleProducts.find(p => p.id === id);
@@ -49,6 +51,22 @@ const ProductDetail = () => {
       title: "Dodano do koszyka",
       description: `${product.name} został dodany do koszyka.`,
     });
+  };
+
+  const handleWishlistToggle = () => {
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+      toast({
+        title: "Usunięto z listy życzeń",
+        description: `${product.name} został usunięty z listy życzeń.`,
+      });
+    } else {
+      addToWishlist(product);
+      toast({
+        title: "Dodano do listy życzeń",
+        description: `${product.name} został dodany do listy życzeń.`,
+      });
+    }
   };
 
   return (
@@ -116,8 +134,13 @@ const ProductDetail = () => {
                   {product.category}
                 </Badge>
                 <div className="flex space-x-2">
-                  <Button variant="ghost" size="icon">
-                    <Heart className="w-4 h-4" />
+                  <Button 
+                    variant="ghost" 
+                    size="icon"
+                    onClick={handleWishlistToggle}
+                    className={isInWishlist(product.id) ? 'text-red-500' : ''}
+                  >
+                    <Heart className={`w-4 h-4 ${isInWishlist(product.id) ? 'fill-current' : ''}`} />
                   </Button>
                   <Button variant="ghost" size="icon">
                     <Share2 className="w-4 h-4" />
@@ -158,9 +181,14 @@ const ProductDetail = () => {
                 {product.inStock ? 'Dodaj do Koszyka' : 'Niedostępne'}
               </Button>
               
-              <Button variant="outline" size="lg" className="w-full">
-                <Heart className="w-4 h-4 mr-2" />
-                Dodaj do Listy Życzeń
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className={`w-full ${isInWishlist(product.id) ? 'border-red-500 text-red-500' : ''}`}
+                onClick={handleWishlistToggle}
+              >
+                <Heart className={`w-4 h-4 mr-2 ${isInWishlist(product.id) ? 'fill-current' : ''}`} />
+                {isInWishlist(product.id) ? 'Usuń z Listy Życzeń' : 'Dodaj do Listy Życzeń'}
               </Button>
             </div>
 

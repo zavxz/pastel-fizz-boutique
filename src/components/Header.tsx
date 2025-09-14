@@ -28,7 +28,7 @@ const Header = () => {
               <Heart className="w-4 h-4 text-primary-foreground" />
             </div>
             <span className="text-lg font-semibold text-foreground">
-              Clay Beauty
+              Liluu
             </span>
           </Link>
 
@@ -54,6 +54,12 @@ const Header = () => {
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Search className="w-4 h-4" />
             </Button>
+            
+            <Link to="/lista-zyczen">
+              <Button variant="ghost" size="icon">
+                <Heart className="w-4 h-4" />
+              </Button>
+            </Link>
             
             <Link to="/koszyk">
               <Button variant="ghost" size="icon" className="relative">

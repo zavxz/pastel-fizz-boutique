@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Product } from '@/types/product';
 import { useCart } from '@/contexts/CartContext';
+import { useWishlist } from '@/contexts/WishlistContext';
 import { useToast } from '@/hooks/use-toast';
 
 interface ProductCardProps {
@@ -13,6 +14,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const { toast } = useToast();
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -33,6 +35,25 @@ const ProductCard = ({ product }: ProductCardProps) => {
       title: "Dodano do koszyka",
       description: `${product.name} został dodany do koszyka.`,
     });
+  };
+
+  const handleWishlistToggle = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+      toast({
+        title: "Usunięto z listy życzeń",
+        description: `${product.name} został usunięty z listy życzeń.`,
+      });
+    } else {
+      addToWishlist(product);
+      toast({
+        title: "Dodano do listy życzeń",
+        description: `${product.name} został dodany do listy życzeń.`,
+      });
+    }
   };
 
   return (
@@ -59,9 +80,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <Button
               size="icon"
               variant="secondary"
-              className="bg-background/90 hover:bg-background"
+              className={`bg-background/90 hover:bg-background ${
+                isInWishlist(product.id) ? 'text-red-500' : ''
+              }`}
+              onClick={handleWishlistToggle}
             >
-              <Heart className="w-4 h-4" />
+              <Heart className={`w-4 h-4 ${isInWishlist(product.id) ? 'fill-current' : ''}`} />
             </Button>
           </div>
 
