@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Heart, ShoppingBag, Menu, X, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,10 +24,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-              <Heart className="w-4 h-4 text-primary-foreground" />
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src={logo} 
+              alt="Liluu Jewellery Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="text-lg font-semibold text-foreground">
               Liluu
             </span>

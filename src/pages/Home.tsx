@@ -177,12 +177,16 @@ const Home = () => {
               Każdy element to unikalne dzieło sztuki stworzone specjalnie dla Ciebie.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                <ShoppingBag className="mr-2 w-4 h-4" />
-                Rozpocznij Zakupy
+              <Button size="lg" variant="secondary" asChild>
+                <Link to="/produkty">
+                  <ShoppingBag className="mr-2 w-4 h-4" />
+                  Rozpocznij Zakupy
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Skontaktuj się z Nami
+              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+                <Link to="/kontakt">
+                  Skontaktuj się z Nami
+                </Link>
               </Button>
             </div>
           </div>
