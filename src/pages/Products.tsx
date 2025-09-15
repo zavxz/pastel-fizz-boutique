@@ -11,6 +11,8 @@ const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState('name');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [showAvailable, setShowAvailable] = useState(true);
+  const [showUnavailable, setShowUnavailable] = useState(true);
   
   const selectedCategory = searchParams.get('kategoria');
 
@@ -30,8 +32,24 @@ const Products = () => {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
 
+    // Filter by availability
+    if (!showAvailable || !showUnavailable) {
+      filtered = filtered.filter(product => {
+        if (showAvailable && product.inStock) return true;
+        if (showUnavailable && !product.inStock) return true;
+        return false;
+      });
+    }
+
     // Sort products
     switch (sortBy) {
+      case 'availability':
+        filtered.sort((a, b) => {
+          if (a.inStock && !b.inStock) return -1;
+          if (!a.inStock && b.inStock) return 1;
+          return 0;
+        });
+        break;
       case 'price-asc':
         filtered.sort((a, b) => a.price - b.price);
         break;
@@ -46,7 +64,7 @@ const Products = () => {
     }
 
     return filtered;
-  }, [selectedCategory, sortBy]);
+  }, [selectedCategory, sortBy, showAvailable, showUnavailable]);
 
   const handleCategoryChange = (category: string) => {
     if (category === 'wszystkie') {
@@ -107,11 +125,21 @@ const Products = () => {
               <h3 className="font-semibold text-foreground">Dostępność</h3>
               <div className="space-y-2">
                 <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="rounded border-border" defaultChecked />
+                  <input 
+                    type="checkbox" 
+                    className="rounded border-border" 
+                    checked={showAvailable}
+                    onChange={(e) => setShowAvailable(e.target.checked)}
+                  />
                   <span className="text-sm">Dostępne</span>
                 </label>
                 <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="rounded border-border" />
+                  <input 
+                    type="checkbox" 
+                    className="rounded border-border" 
+                    checked={showUnavailable}
+                    onChange={(e) => setShowUnavailable(e.target.checked)}
+                  />
                   <span className="text-sm">Niedostępne</span>
                 </label>
               </div>
@@ -134,6 +162,7 @@ const Products = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="name">Nazwa A-Z</SelectItem>
+                    <SelectItem value="availability">Dostępność</SelectItem>
                     <SelectItem value="price-asc">Cena: Najniższa</SelectItem>
                     <SelectItem value="price-desc">Cena: Najwyższa</SelectItem>
                   </SelectContent>

@@ -28,7 +28,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Liluu Jewellery Logo" 
-              className="w-10 h-10 object-contain"
+              className="w-16 h-16 object-contain"
             />
             <span className="text-lg font-semibold text-foreground">
               Liluu

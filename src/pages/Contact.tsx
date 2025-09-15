@@ -128,36 +128,52 @@ const Contact = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-6">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const data = {
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message')
+                  };
+                  
+                  // Here you would integrate with your email service
+                  // For now, we'll just log and show an alert
+                  console.log('Form submitted with data:', data);
+                  alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce na adres kontakt@liluu.pl');
+                }}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">Imię *</Label>
-                      <Input id="firstName" placeholder="Twoje imię" required />
+                      <Input id="firstName" name="firstName" placeholder="Twoje imię" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Nazwisko *</Label>
-                      <Input id="lastName" placeholder="Twoje nazwisko" required />
+                      <Input id="lastName" name="lastName" placeholder="Twoje nazwisko" required />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" placeholder="twoj@email.com" required />
+                    <Input id="email" name="email" type="email" placeholder="twoj@email.com" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone">Telefon</Label>
-                    <Input id="phone" type="tel" placeholder="+48 123 456 789" />
+                    <Input id="phone" name="phone" type="tel" placeholder="+48 123 456 789" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="subject">Temat *</Label>
-                    <Input id="subject" placeholder="Czego dotyczy Twoja wiadomość?" required />
+                    <Input id="subject" name="subject" placeholder="Czego dotyczy Twoja wiadomość?" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Wiadomość *</Label>
-                    <Textarea id="message" placeholder="Opisz szczegółowo swoją prośbę lub pytanie..." className="min-h-32" required />
+                    <Textarea id="message" name="message" placeholder="Opisz szczegółowo swoją prośbę lub pytanie..." className="min-h-32" required />
                   </div>
 
                   <div className="flex items-center space-x-2">

@@ -1,6 +1,7 @@
 import { Heart, Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import logo from '@/assets/logo.png';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gradient-card border-t border-border">
@@ -8,10 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-                <Heart className="w-4 h-4 text-primary-foreground" />
-              </div>
+            <div className="flex items-center space-x-3">
+              <img 
+                src={logo} 
+                alt="Liluu Jewellery Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="text-lg font-semibold text-foreground">
                 Liluu
               </span>

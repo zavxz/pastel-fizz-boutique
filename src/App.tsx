@@ -14,6 +14,8 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
                   <Route path="/lista-zyczen" element={<Wishlist />} />
                   <Route path="/o-nas" element={<About />} />
                   <Route path="/kontakt" element={<Contact />} />
+                  <Route path="/regulamin" element={<TermsOfService />} />
+                  <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
