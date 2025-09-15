@@ -24,7 +24,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-1">
             <img 
               src={logo} 
               alt="Liluu Jewellery Logo" 
