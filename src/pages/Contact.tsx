@@ -5,10 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="bg-gradient-hero border-b border-border">
         <div className="container mx-auto px-4 py-16 md:py-24">
@@ -43,7 +41,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">kontakt@claybeauty.pl</p>
+                    <p className="text-muted-foreground">kontakt@liluu.pl</p>
                     <p className="text-sm text-muted-foreground">
                       Odpowiadamy w ciągu 24 godzin
                     </p>
@@ -113,8 +111,8 @@ const Contact = () => {
                   </Button>
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  <p>@claybeauty_pl</p>
-                  <p>facebook.com/claybeauty</p>
+                  <p>@liluu</p>
+                  <p>facebook.com/liluu</p>
                 </div>
               </CardContent>
             </Card>
@@ -134,67 +132,36 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">Imię *</Label>
-                      <Input 
-                        id="firstName" 
-                        placeholder="Twoje imię"
-                        required 
-                      />
+                      <Input id="firstName" placeholder="Twoje imię" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Nazwisko *</Label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Twoje nazwisko"
-                        required 
-                      />
+                      <Input id="lastName" placeholder="Twoje nazwisko" required />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="twoj@email.com"
-                      required 
-                    />
+                    <Input id="email" type="email" placeholder="twoj@email.com" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone">Telefon</Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
-                      placeholder="+48 123 456 789"
-                    />
+                    <Input id="phone" type="tel" placeholder="+48 123 456 789" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="subject">Temat *</Label>
-                    <Input 
-                      id="subject" 
-                      placeholder="Czego dotyczy Twoja wiadomość?"
-                      required 
-                    />
+                    <Input id="subject" placeholder="Czego dotyczy Twoja wiadomość?" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Wiadomość *</Label>
-                    <Textarea 
-                      id="message"
-                      placeholder="Opisz szczegółowo swoją prośbę lub pytanie..."
-                      className="min-h-32"
-                      required
-                    />
+                    <Textarea id="message" placeholder="Opisz szczegółowo swoją prośbę lub pytanie..." className="min-h-32" required />
                   </div>
 
                   <div className="flex items-center space-x-2">
-                    <input 
-                      type="checkbox" 
-                      id="privacy" 
-                      className="rounded border-border"
-                      required
-                    />
+                    <input type="checkbox" id="privacy" className="rounded border-border" required />
                     <Label htmlFor="privacy" className="text-sm">
                       Zgadzam się na przetwarzanie moich danych osobowych zgodnie z{' '}
                       <a href="/polityka-prywatnosci" className="text-primary hover:underline">
@@ -203,11 +170,7 @@ const Contact = () => {
                     </Label>
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full bg-powder-pink hover:bg-powder-pink-dark text-primary-foreground"
-                  >
+                  <Button type="submit" size="lg" className="w-full bg-powder-pink hover:bg-powder-pink-dark text-primary-foreground">
                     <Send className="w-4 h-4 mr-2" />
                     Wyślij Wiadomość
                   </Button>
@@ -279,8 +242,6 @@ const Contact = () => {
           </div>
         </section>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;

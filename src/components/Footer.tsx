@@ -1,12 +1,9 @@
 import { Heart, Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-gradient-card border-t border-border">
+  return <footer className="bg-gradient-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -85,7 +82,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Warszawa, Polska</span>
+                <span>Kraków, Polska</span>
               </div>
             </div>
           </div>
@@ -106,8 +103,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
