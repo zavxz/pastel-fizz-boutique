@@ -16,10 +16,7 @@ const Footer = () => {
                 Liluu
               </span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Tworzymy unikalne dzieła sztuki z modeliny. Każdy element wykonany jest ręcznie 
-              z największą starannością i miłością do rzemiosła.
-            </p>
+            <p className="text-sm text-muted-foreground">Tworzymy unikalne dzieła sztuki z modeliny. Każdy element wykonany jest ręcznie z największą starannością i miłością do rzemiosła.</p>
             <div className="flex space-x-2">
               <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
                 <Instagram className="w-4 h-4" />
@@ -82,7 +79,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Kraków, Polska</span>
+                <span>Kraków, Warszawa, Polska</span>
               </div>
             </div>
           </div>
