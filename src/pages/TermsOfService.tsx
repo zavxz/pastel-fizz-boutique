@@ -1,9 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
 const TermsOfService = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="bg-gradient-hero border-b border-border">
         <div className="container mx-auto px-4 py-16">
@@ -33,12 +31,8 @@ const TermsOfService = () => {
                 1. Niniejszy Regulamin określa zasady korzystania ze sklepu internetowego Liluu, 
                 prowadzonego pod adresem www.liluu.pl
               </p>
-              <p className="text-muted-foreground">
-                2. Właścicielem sklepu jest firma Liluu, ul. Kwiatowa 123, 00-001 Warszawa
-              </p>
-              <p className="text-muted-foreground">
-                3. Sklep oferuje ręcznie wykonaną biżuterię z modeliny
-              </p>
+              
+              <p className="text-muted-foreground">2. Sklep oferuje ręcznie wykonaną biżuterię z modeliny</p>
             </CardContent>
           </Card>
 
@@ -104,9 +98,7 @@ const TermsOfService = () => {
               <CardTitle>§ 5 Prawo do Odstąpienia</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                1. Klient ma prawo odstąpić od umowy w terminie 30 dni bez podania przyczyny
-              </p>
+              <p className="text-muted-foreground">1. Klient ma prawo odstąpić od umowy w terminie 14 dni bez podania przyczyny</p>
               <p className="text-muted-foreground">
                 2. Zwracany produkt musi być w stanie nienaruszonym, w oryginalnym opakowaniu
               </p>
@@ -124,9 +116,7 @@ const TermsOfService = () => {
               <CardTitle>§ 6 Reklamacje</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                1. Reklamacje można składać na adres kontakt@liluu.pl lub pisemnie
-              </p>
+              <p className="text-muted-foreground">1. Reklamacje można składać na adres kontakt@liluu.pl</p>
               <p className="text-muted-foreground">
                 2. Reklamacja powinna zawierać opis wady i żądanie Klienta
               </p>
@@ -160,8 +150,6 @@ const TermsOfService = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default TermsOfService;
