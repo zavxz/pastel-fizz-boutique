@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Minus, Plus, Trash2, ArrowLeft, ShoppingBag, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 const Cart = () => {
   const { items, updateQuantity, removeFromCart, clearCart, totalPrice, totalItems } = useCart();
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleQuantityChange = (productId: string, newQuantity: number) => {
     if (newQuantity < 1) {
@@ -227,7 +228,7 @@ const Cart = () => {
                 <Button 
                   size="lg" 
                   className="w-full bg-powder-pink hover:bg-powder-pink-dark text-primary-foreground"
-                  onClick={() => window.location.href = '/realizacja-zamowienia'}
+                  onClick={() => navigate('/realizacja-zamowienia')}
                 >
                   Przejdź do Płatności
                 </Button>
