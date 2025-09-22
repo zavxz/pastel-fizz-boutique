@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Instagram, Facebook, Send } from 'lucide-react';
+import { Mail, Instagram, Facebook, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -45,49 +45,6 @@ const Contact = () => {
                     <p className="text-sm text-muted-foreground">
                       Odpowiadamy w ciągu 24 godzin
                     </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-powder-pink-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-powder-pink-dark" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Telefon</h3>
-                    <p className="text-muted-foreground">+48 123 456 789</p>
-                    <p className="text-sm text-muted-foreground">
-                      Pon-Pt: 9:00 - 17:00
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-powder-pink-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-powder-pink-dark" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Adres</h3>
-                    <p className="text-muted-foreground">
-                      ul. Kwiatowa 123<br />
-                      00-001 Warszawa
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Atelier otwarte po umówieniu
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-powder-pink-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-powder-pink-dark" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">Godziny Pracy</h3>
-                    <div className="text-muted-foreground text-sm space-y-1">
-                      <p>Poniedziałek - Piątek: 9:00 - 17:00</p>
-                      <p>Sobota: 10:00 - 14:00</p>
-                      <p>Niedziela: Zamknięte</p>
-                    </div>
                   </div>
                 </div>
               </div>

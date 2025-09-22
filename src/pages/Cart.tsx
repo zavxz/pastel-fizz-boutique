@@ -224,7 +224,11 @@ const Cart = () => {
                   </div>
                 )}
 
-                <Button size="lg" className="w-full bg-powder-pink hover:bg-powder-pink-dark text-primary-foreground">
+                <Button 
+                  size="lg" 
+                  className="w-full bg-powder-pink hover:bg-powder-pink-dark text-primary-foreground"
+                  onClick={() => window.location.href = '/realizacja-zamowienia'}
+                >
                   Przejdź do Płatności
                 </Button>
 

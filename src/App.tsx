@@ -8,6 +8,7 @@ import { WishlistProvider } from "@/contexts/WishlistContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import CookieNotification from "@/components/CookieNotification";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
@@ -15,6 +16,9 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Checkout from "./pages/Checkout";
+import Payment from "./pages/Payment";
+import OrderSuccess from "./pages/OrderSuccess";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
@@ -41,6 +45,9 @@ const App = () => (
                   <Route path="/lista-zyczen" element={<Wishlist />} />
                   <Route path="/o-nas" element={<About />} />
                   <Route path="/kontakt" element={<Contact />} />
+                  <Route path="/realizacja-zamowienia" element={<Checkout />} />
+                  <Route path="/platnosc" element={<Payment />} />
+                  <Route path="/zamowienie-potwierdzone" element={<OrderSuccess />} />
                   <Route path="/regulamin" element={<TermsOfService />} />
                   <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
@@ -49,6 +56,7 @@ const App = () => (
               </main>
               <Footer />
             </div>
+            <CookieNotification />
           </BrowserRouter>
         </WishlistProvider>
       </CartProvider>
