@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieNotification from "@/components/CookieNotification";
+import PageTransition from "@/components/PageTransition";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
@@ -37,22 +38,24 @@ const App = () => (
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/produkty" element={<Products />} />
-                  <Route path="/produkt/:id" element={<ProductDetail />} />
-                  <Route path="/koszyk" element={<Cart />} />
-                  <Route path="/lista-zyczen" element={<Wishlist />} />
-                  <Route path="/o-nas" element={<About />} />
-                  <Route path="/kontakt" element={<Contact />} />
-                  <Route path="/realizacja-zamowienia" element={<Checkout />} />
-                  <Route path="/platnosc" element={<Payment />} />
-                  <Route path="/zamowienie-potwierdzone" element={<OrderSuccess />} />
-                  <Route path="/regulamin" element={<TermsOfService />} />
-                  <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
+                <PageTransition>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/produkty" element={<Products />} />
+                    <Route path="/produkt/:id" element={<ProductDetail />} />
+                    <Route path="/koszyk" element={<Cart />} />
+                    <Route path="/lista-zyczen" element={<Wishlist />} />
+                    <Route path="/o-nas" element={<About />} />
+                    <Route path="/kontakt" element={<Contact />} />
+                    <Route path="/realizacja-zamowienia" element={<Checkout />} />
+                    <Route path="/platnosc" element={<Payment />} />
+                    <Route path="/zamowienie-potwierdzone" element={<OrderSuccess />} />
+                    <Route path="/regulamin" element={<TermsOfService />} />
+                    <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </PageTransition>
               </main>
               <Footer />
             </div>
