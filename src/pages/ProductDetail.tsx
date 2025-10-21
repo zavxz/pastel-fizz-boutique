@@ -29,7 +29,7 @@ const ProductDetail = () => {
         <div className="text-center space-y-4">
           <h1 className="text-2xl font-bold">Produkt nie został znaleziony</h1>
           <Button asChild>
-            <Link to="/produkty">Wróć do sklepu</Link>
+            <Link to="/sklep">Wróć do sklepu</Link>
           </Button>
         </div>
       </div>

@@ -33,7 +33,7 @@ const Home = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-powder-pink hover:bg-powder-pink-dark text-primary-foreground">
-                  <Link to="/produkty">
+                  <Link to="/sklep">
                     Zobacz Kolekcję
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
@@ -102,7 +102,7 @@ const Home = () => {
 
           <div className="text-center">
             <Button asChild variant="outline" size="lg">
-              <Link to="/produkty">
+              <Link to="/sklep">
                 Zobacz Wszystkie Produkty
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -178,7 +178,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
-                <Link to="/produkty">
+                <Link to="/sklep">
                   <ShoppingBag className="mr-2 w-4 h-4" />
                   Rozpocznij Zakupy
                 </Link>
