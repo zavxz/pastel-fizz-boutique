@@ -12,12 +12,13 @@ const Header = () => {
 
   const navItems = [
     { name: 'Strona Główna', path: '/' },
-    { name: 'Sklep', path: '/sklep' },
+    { name: 'Sklep', path: 'https://liluu.pl/sklep/#' },
     { name: 'O Nas', path: '/o-nas' },
     { name: 'Kontakt', path: '/kontakt' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isExternal = (path: string) => /^https?:\/\//.test(path);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -38,17 +39,28 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path) 
-                    ? 'text-primary border-b-2 border-primary pb-1' 
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {item.name}
-              </Link>
+              isExternal(item.path) ? (
+                <a
+                  key={item.path}
+                  href={item.path}
+                  className="text-sm font-medium transition-colors text-muted-foreground hover:text-primary"
+                  rel="noopener"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(item.path) 
+                      ? 'text-primary border-b-2 border-primary pb-1' 
+                      : 'text-muted-foreground'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -92,18 +104,30 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`text-sm font-medium transition-colors px-2 py-1 rounded ${
-                    isActive(item.path) 
-                      ? 'text-primary bg-powder-pink-light' 
-                      : 'text-muted-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                isExternal(item.path) ? (
+                  <a
+                    key={item.path}
+                    href={item.path}
+                    className={`text-sm font-medium transition-colors px-2 py-1 rounded text-muted-foreground hover:text-primary`}
+                    onClick={() => setIsMenuOpen(false)}
+                    rel="noopener"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`text-sm font-medium transition-colors px-2 py-1 rounded ${
+                      isActive(item.path) 
+                        ? 'text-primary bg-powder-pink-light' 
+                        : 'text-muted-foreground hover:text-primary'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <div className="border-t border-border pt-3 mt-3">
                 <Button variant="ghost" size="sm" className="w-full justify-start">
