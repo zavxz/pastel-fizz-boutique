@@ -41,7 +41,7 @@ const App = () => (
                 <PageTransition>
                   <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/produkty" element={<Products />} />
+                    <Route path="/sklep" element={<Products />} />
                     <Route path="/produkt/:id" element={<ProductDetail />} />
                     <Route path="/koszyk" element={<Cart />} />
                     <Route path="/lista-zyczen" element={<Wishlist />} />

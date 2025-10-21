@@ -12,7 +12,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Strona Główna', path: '/' },
-    { name: 'Produkty', path: '/produkty' },
+    { name: 'Sklep', path: '/sklep' },
     { name: 'O Nas', path: '/o-nas' },
     { name: 'Kontakt', path: '/kontakt' }
   ];
